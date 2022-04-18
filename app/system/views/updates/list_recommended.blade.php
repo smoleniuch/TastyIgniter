@@ -27,18 +27,18 @@
                                 <b>{{ $item['name'] }}</b><span class="small text-muted"> by {{ $item['author'] }}</span>
                                 <span class="help-block font-weight-normal">{{ str_limit($item['description'], 128) }}</span>
                             </div>
-                            <div class="custom-control custom-switch">
+                            <div class="form-check form-switch">
                                 <input
                                     type="checkbox"
                                     id="list-recommended-{{ $item['code'] }}"
-                                    class="custom-control-input"
+                                    class="form-check-input"
                                     name="install_items[{{ $index }}]"
                                     value="{{ $item['code'] }}"
                                     {{ ($itemType != 'theme' || $loop->first) ? 'checked="checked"' : '' }}
                                     {!! empty($item['installed']) ? '' : 'disabled="disabled"' !!}
                                 />
                                 <label
-                                    class="custom-control-label"
+                                    class="form-check-label"
                                     for="list-recommended-{{ $item['code'] }}"
                                 ></label>
                             </div>

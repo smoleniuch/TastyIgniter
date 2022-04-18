@@ -60,10 +60,10 @@
             {!! $this->previewMode ? 'disabled="disabled"' : '' !!}
         />
 
-        <div class="custom-control custom-checkbox" tabindex="0">
+        <div class="form-check" tabindex="0">
             <input
                 type="checkbox"
-                class="custom-control-input"
+                class="form-check-input"
                 id="{{ $field->getId() }}"
                 name="{{ $field->getName() }}"
                 value="1"
@@ -71,7 +71,7 @@
                 {!! $field->value == 1 ? 'checked="checked"' : '' !!}
                 {!! $field->getAttributes() !!}
             />
-            <label class="custom-control-label" for="{{ $field->getId() }}">
+            <label class="form-check-label" for="{{ $field->getId() }}">
                 @if ($field->placeholder) @lang($field->placeholder) @else &nbsp; @endif
             </label>
         </div>

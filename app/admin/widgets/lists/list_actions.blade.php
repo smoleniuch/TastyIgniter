@@ -5,11 +5,11 @@
         data-action-total-records="{{ $records->total() }}"
     >
         <td class="bulk-action">
-            <div class="custom-control custom-checkbox active">
+            <div class="form-check active">
                 <input
                     type="checkbox" id="{{ 'checkboxAll-bulk-'.$listId }}"
-                    class="custom-control-input" onclick="$('input[name*=\'checked\']').prop('checked', this.checked)"/>
-                <label class="custom-control-label" for="{{ 'checkboxAll-bulk-'.$listId }}">&nbsp;</label>
+                    class="form-check-input" onclick="$('input[name*=\'checked\']').prop('checked', this.checked)"/>
+                <label class="form-check-label" for="{{ 'checkboxAll-bulk-'.$listId }}">&nbsp;</label>
             </div>
         </td>
         <td class="w-100" colspan="999">

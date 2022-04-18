@@ -34,7 +34,6 @@ use Main\Classes\Customer;
 use System\Classes\ErrorHandler;
 use System\Classes\ExtensionManager;
 use System\Classes\MailManager;
-use System\Libraries\Assets;
 use System\Models\Settings_model;
 use System\Template\Extension\BladeExtension;
 
@@ -62,7 +61,6 @@ class ServiceProvider extends AppServiceProvider
         $this->registerPagicParser();
         $this->registerMailer();
         $this->registerPaginator();
-        $this->registerAssets();
 
         // Register admin and main module providers
         collect(Config::get('system.modules', []))->each(function ($module) {
@@ -316,30 +314,6 @@ class ServiceProvider extends AppServiceProvider
 
         Event::listen(CommandStarting::class, function () {
             config()->set('system.activityRecordsTTL', (int)setting('activity_log_timeout', 60));
-        });
-    }
-
-    protected function registerAssets()
-    {
-        Assets::registerCallback(function (Assets $manager) {
-            $manager->registerSourcePath(app_path('system/assets'));
-        });
-
-        Assets::registerCallback(function (Assets $manager) {
-            $manager->registerBundle('js', [
-                '~/app/admin/assets/node_modules/jquery/dist/jquery.min.js',
-                '~/app/admin/assets/node_modules/popper.js/dist/umd/popper.min.js',
-                '~/app/admin/assets/node_modules/bootstrap/dist/js/bootstrap.min.js',
-                '~/app/admin/assets/node_modules/sweetalert/dist/sweetalert.min.js',
-                '~/app/system/assets/ui/js/vendor/waterfall.min.js',
-                '~/app/system/assets/ui/js/vendor/transition.js',
-                '~/app/system/assets/ui/js/app.js',
-                '~/app/system/assets/ui/js/loader.bar.js',
-                '~/app/system/assets/ui/js/loader.progress.js',
-                '~/app/system/assets/ui/js/flashmessage.js',
-                '~/app/system/assets/ui/js/toggler.js',
-                '~/app/system/assets/ui/js/trigger.js',
-            ], '~/app/system/assets/ui/flame.js', 'admin');
         });
     }
 

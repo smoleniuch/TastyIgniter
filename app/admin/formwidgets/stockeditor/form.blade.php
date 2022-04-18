@@ -26,8 +26,8 @@
                             class="card-header bg-transparent"
                             id="{{ $formWidget->getId('heading') }}"
                             role="button"
-                            data-toggle="collapse"
-                            data-target="#{{ $formWidget->getId('collapse') }}"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#{{ $formWidget->getId('collapse') }}"
                             aria-expanded="true"
                             aria-controls="{{ $formWidget->getId('collapse') }}"
                         >

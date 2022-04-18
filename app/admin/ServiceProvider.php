@@ -88,13 +88,6 @@ class ServiceProvider extends AppServiceProvider
 
             // Admin asset bundles
             $manager->registerBundle('scss', '~/app/admin/assets/scss/admin.scss', null, 'admin');
-            $manager->registerBundle('js', [
-                '~/app/system/assets/ui/flame.js',
-                '~/app/admin/assets/node_modules/js-cookie/src/js.cookie.js',
-                '~/app/admin/assets/node_modules/select2/dist/js/select2.min.js',
-                '~/app/admin/assets/node_modules/metismenu/dist/metisMenu.min.js',
-                '~/app/admin/assets/js/src/app.js',
-            ], '~/app/admin/assets/js/admin.js', 'admin');
         });
     }
 
@@ -272,7 +265,7 @@ class ServiceProvider extends AppServiceProvider
                     'attributes' => [
                         'class' => 'nav-link',
                         'href' => '',
-                        'data-toggle' => 'dropdown',
+                        'data-bs-toggle' => 'dropdown',
                     ],
                 ],
                 'settings' => [
@@ -296,8 +289,8 @@ class ServiceProvider extends AppServiceProvider
                 'label' => 'admin::lang.text_set_status',
                 'iconCssClass' => 'fa fa-circle fa-fw text-'.UserState::forUser()->getStatusColorName(),
                 'attributes' => [
-                    'data-toggle' => 'modal',
-                    'data-target' => '#editStaffStatusModal',
+                    'data-bs-toggle' => 'modal',
+                    'data-bs-target' => '#editStaffStatusModal',
                     'role' => 'button',
                 ],
             ]);

@@ -9,7 +9,7 @@
                     <button
                         type="button"
                         class="btn btn-default dropdown-toggle"
-                        data-toggle="dropdown"
+                        data-bs-toggle="dropdown"
                     ><i class="fa fa-ellipsis-h"></i></button>
                     <div
                         id="{{ $this->getId('folder-tree') }}"
@@ -62,33 +62,31 @@
 
         <div class="toolbar-item">
             <div class="input-group">
-                <div class="input-group-prepend">
-                    <div class="dropdown mr-2">
-                        <a class="btn btn-default dropdown-toggle" role="button" data-toggle="dropdown" title="Filter">
-                            <i class="fa fa-filter"></i> <i class="caret"></i>
-                        </a>
-                        {!! $this->makePartial('mediamanager/filters', ['filterBy', $filterBy]) !!}
-                    </div>
-
-                    <div class="dropdown mr-2">
-                        <a class="btn btn-default dropdown-toggle" role="button" data-toggle="dropdown" title="Sort">
-                            @if (isset($sortBy[1]) && $sortBy[1] === 'ascending')
-                                <i class="fa fa-sort-amount-asc"></i> <i class="caret"></i>
-                            @else
-                                <i class="fa fa-sort-amount-desc"></i> <i class="caret"></i>
-                            @endif
-                        </a>
-                        {!! $this->makePartial('mediamanager/sorting', ['sortBy', $sortBy]) !!}
-                    </div>
-
-                    @unless ($isPopup)
-                        <a
-                            class="btn btn-default btn-options mr-2"
-                            href="{{ admin_url('settings/edit/media') }}">
-                            <i class="fa fa-gears"></i>
-                        </a>
-                    @endunless
+                <div class="dropdown mr-2">
+                    <a class="btn btn-default dropdown-toggle" role="button" data-bs-toggle="dropdown" title="Filter">
+                        <i class="fa fa-filter"></i> <i class="caret"></i>
+                    </a>
+                    {!! $this->makePartial('mediamanager/filters', ['filterBy', $filterBy]) !!}
                 </div>
+
+                <div class="dropdown mr-2">
+                    <a class="btn btn-default dropdown-toggle" role="button" data-bs-toggle="dropdown" title="Sort">
+                        @if (isset($sortBy[1]) && $sortBy[1] === 'ascending')
+                            <i class="fa fa-sort-amount-asc"></i> <i class="caret"></i>
+                        @else
+                            <i class="fa fa-sort-amount-desc"></i> <i class="caret"></i>
+                        @endif
+                    </a>
+                    {!! $this->makePartial('mediamanager/sorting', ['sortBy', $sortBy]) !!}
+                </div>
+
+                @unless ($isPopup)
+                    <a
+                        class="btn btn-default btn-options mr-2"
+                        href="{{ admin_url('settings/edit/media') }}">
+                        <i class="fa fa-gears"></i>
+                    </a>
+                @endunless
                 {!! $this->makePartial('mediamanager/search') !!}
             </div>
         </div>

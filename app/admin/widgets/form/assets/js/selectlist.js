@@ -54,7 +54,7 @@
             return 'dropdown-item multiselect-item'
         },
         templates: {
-            button: '<button type="button" class="multiselect dropdown-toggle btn btn-light btn-block" data-toggle="dropdown"><span class="multiselect-selected-text"></span></button>',
+            button: '<button type="button" class="multiselect dropdown-toggle btn btn-light btn-block" data-bs-toggle="dropdown"><span class="multiselect-selected-text"></span></button>',
         }
     }
 
