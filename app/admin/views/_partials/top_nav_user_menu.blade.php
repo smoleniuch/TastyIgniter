@@ -25,14 +25,14 @@
             </a>
         @endforeach
         <div role="separator" class="dropdown-divider"></div>
-        <a class="dropdown-item text-black-50" href="https://tastyigniter.com/about" target="_blank">
-            <i class="fa fa-info-circle fa-fw"></i>@lang('admin::lang.text_about_tastyigniter')
+        <a class="dropdown-item text-black-50" href="https://tastyigniter.com/support" target="_blank">
+            <i class="fa fa-circle-question fa-fw"></i>@lang('admin::lang.text_support')
         </a>
         <a class="dropdown-item text-black-50" href="https://tastyigniter.com/docs" target="_blank">
             <i class="fa fa-book fa-fw"></i>@lang('admin::lang.text_documentation')
         </a>
         <a class="dropdown-item text-black-50" href="https://forum.tastyigniter.com" target="_blank">
-            <i class="fa fa-users fa-fw"></i>@lang('admin::lang.text_community_support')
+            <i class="fa fa-comments fa-fw"></i>@lang('admin::lang.text_community_support')
         </a>
     </div>
 </li>

@@ -42,7 +42,7 @@ return [
     'text_resetting' => 'Resetting...',
     'text_loading' => 'Loading...',
     'text_deleting' => 'Deleting...',
-    'text_about_tastyigniter' => 'About TastyIgniter',
+    'text_support' => 'Help Center',
     'text_documentation' => 'Documentation',
     'text_community_support' => 'Community Support',
     'text_empty' => 'Empty',
