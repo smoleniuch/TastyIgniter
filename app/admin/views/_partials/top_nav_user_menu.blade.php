@@ -21,9 +21,9 @@
         <div class="px-3 pb-3">
             <form method="POST" accept-charset="UTF-8">
                 <div class="input-group">
-                        <div class="input-group-text{{ $userPanel->hasActiveLocation() ? ' text-info' : ' text-muted' }}">
-                            <i class="fa fa-map-marker fa-fw"></i>
-                        </div>
+                    <div class="input-group-text{{ $userPanel->hasActiveLocation() ? ' text-info' : ' text-muted' }}">
+                        <i class="fa fa-map-marker fa-fw"></i>
+                    </div>
                     @if(count($userPanel->listLocations()) <= 1)
                         <input
                             type="text"
@@ -33,7 +33,7 @@
                     @else
                         <select
                             name="location"
-                            class="form-control"
+                            class="form-select"
                             data-request="{{ $this->getEventHandler('onChooseLocation') }}"
                         >
                             <option value="0">@lang('admin::lang.text_all_locations')</option>

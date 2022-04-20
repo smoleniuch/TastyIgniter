@@ -12,7 +12,7 @@
             <select
                 id="{{ $field->getId() }}"
                 name="{{ $field->getName() }}"
-                class="form-control me-1"
+                class="form-select me-1"
                 data-control="choose-record"
                 {!! $field->getAttributes() !!}
             >

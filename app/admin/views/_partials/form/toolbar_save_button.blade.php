@@ -1,6 +1,6 @@
 @php
     $saveActions = array_get($button->config, 'saveActions', ['continue', 'close', 'new']);
-    $selectedAction = @json_decode($d = array_get($_COOKIE, 'ti_activeFormSaveAction'), TRUE);
+    $selectedAction = @json_decode($d = array_get($_COOKIE, 'ti_activeFormSaveAction'), true);
     $selectedAction = ($selectedAction && in_array($selectedAction, $saveActions)) ? $selectedAction : 'continue';
 @endphp
 <div
@@ -16,7 +16,8 @@
         type="button"
         class="{{ $button->cssClass }} dropdown-toggle dropdown-toggle-split"
         data-bs-toggle="dropdown"
-        data-display="static"
+        data-bs-display="static"
+        data-bs-reference="parent"
         aria-haspopup="true"
         aria-expanded="false"
     ><span class="sr-only">Toggle Dropdown</span></button>

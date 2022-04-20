@@ -14,11 +14,6 @@
 
     $(document).render(function () {
         $('a, span, button', document).not('[data-bs-toggle]').tooltip({placement: 'bottom'});
-
-        $.fn.select2.defaults.set('width', null);
-        $.fn.select2.defaults.set('theme', 'bootstrap');
-        $.fn.select2.defaults.set('minimumResultsForSearch', 10);
-        $('select.form-control', document).select2();
         $('.alert', document).alert();
     });
 

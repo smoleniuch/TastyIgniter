@@ -10,7 +10,7 @@
     <div class="modal-content">
         <div class="modal-header">
             <h4 class="modal-title">{{ sprintf(lang('system::lang.updates.text_popular_title'), ucwords(str_plural($itemType))) }}</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
         </div>
         <div class="modal-body">
             @if (isset($items) && count($items))
@@ -25,7 +25,7 @@
                             </div>
                             <div class="flex-grow-1 px-3">
                                 <b>{{ $item['name'] }}</b><span class="small text-muted"> by {{ $item['author'] }}</span>
-                                <span class="help-block font-weight-normal">{{ str_limit($item['description'], 128) }}</span>
+                                <p class="help-block font-weight-normal">{{ str_limit($item['description'], 128) }}</p>
                             </div>
                             <div class="form-check form-switch">
                                 <input

@@ -13,7 +13,7 @@
                 $checkboxId = 'checkbox_'.$field->getId().'_'.$loop->iteration;
                 if (!is_array($option)) $option = [$option];
             @endphp
-            <div class="form-check{{ $inlineMode ? ' custom-control-inline' : '' }} mb-2">
+            <div class="form-check{{ $inlineMode ? ' form-check-inline' : '' }} mb-2">
                 <input
                     type="checkbox"
                     id="{{ $checkboxId }}"
@@ -57,7 +57,7 @@
                             $checkboxId = 'checkbox_'.$field->getId().'_'.$loop->iteration;
                             if (is_string($option)) $option = [$option];
                         @endphp
-                        <div class="form-check{{ $inlineMode ? ' custom-control-inline' : '' }} mb-2">
+                        <div class="form-check{{ $inlineMode ? ' form-check-inline' : '' }} mb-2">
                             <input
                                 type="checkbox"
                                 id="{{ $checkboxId }}"

@@ -3,9 +3,12 @@
 @endphp
 <div class="field-radio">
     @foreach ($fieldOptions as $key => $value)
+        @php
+            $radioLabel = is_lang_key($value) ? lang($value) : $value;
+        @endphp
         <div
             id="{{ $field->getId() }}"
-            class="form-check custom-control-inline"
+            @class(['form-check form-check-inline' => $radioLabel])
         >
             <input
                 type="radio"
@@ -17,10 +20,12 @@
                 {!! $this->previewMode ? 'disabled="disabled"' : '' !!}
                 {!! $field->getAttributes() !!}
             />
-            <label
-                class="form-check-label"
-                for="{{ $field->getId($loop->iteration) }}"
-            >{{ is_lang_key($value) ? lang($value) : $value }}</label>
+            @if($radioLabel)
+                <label
+                    class="form-check-label"
+                    for="{{ $field->getId($loop->iteration) }}"
+                >{{ $radioLabel }}</label>
+            @endif
         </div>
     @endforeach
 </div>

@@ -198,7 +198,7 @@
 .field-custom-container {
   padding-top: $input-padding-y;
   padding-bottom: $input-padding-y;
-  height: $input-height-inner;
+  height: add($input-height-inner, 0.25rem);
 }
 // Control label
 .control-label {

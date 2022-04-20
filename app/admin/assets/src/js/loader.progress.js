@@ -39,7 +39,7 @@
         this.hide()
 
         var indicator = $('<div class="progress-indicator"></div>')
-        indicator.append($('<span class="ti-loading"></span>'))
+        indicator.append($('<span class="ti-loading spinner-border"></span>'))
         indicator.append($('<div></div>').text(this.options.text))
         if (this.options.opaque !== undefined) {
             indicator.addClass('is-opaque')

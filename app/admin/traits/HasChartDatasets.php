@@ -74,7 +74,7 @@ trait HasChartDatasets
         $dateRanges = $this->getDatePeriod($start, $end);
         $this->locationApplyScope($query);
 
-        return $this->getPointsArray($dateRanges, $query->get());
+        return $this->getPointsArray($dateRanges, $query->pluck('y', 'x'));
     }
 
     protected function getDatePeriod($start, $end)

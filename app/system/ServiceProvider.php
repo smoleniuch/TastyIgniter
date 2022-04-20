@@ -269,7 +269,7 @@ class ServiceProvider extends AppServiceProvider
 
         Paginator::currentPageResolver(function ($pageName = 'page') {
             $page = Request::get($pageName);
-            if (filter_var($page, FILTER_VALIDATE_INT) !== FALSE && (int)$page >= 1) {
+            if (filter_var($page, FILTER_VALIDATE_INT) !== false && (int)$page >= 1) {
                 return $page;
             }
 
@@ -298,7 +298,7 @@ class ServiceProvider extends AppServiceProvider
         $this->app->resolving('translator.localization', function ($localization, $app) {
             $app['config']->set('localization.locale', setting('default_language', $app['config']['app.locale']));
             $app['config']->set('localization.supportedLocales', setting('supported_languages', []) ?: ['en']);
-            $app['config']->set('localization.detectBrowserLocale', (bool)setting('detect_language', FALSE));
+            $app['config']->set('localization.detectBrowserLocale', (bool)setting('detect_language', false));
         });
 
         $this->app->resolving('geocoder', function ($geocoder, $app) {
@@ -361,7 +361,7 @@ class ServiceProvider extends AppServiceProvider
         Event::listen('console.schedule', function (Schedule $schedule) {
             // Check for system updates every 12 hours
             $schedule->call(function () {
-                Classes\UpdateManager::instance()->requestUpdateList(TRUE);
+                Classes\UpdateManager::instance()->requestUpdateList(true);
             })->name('System Updates Checker')->cron('0 */12 * * *')->evenInMaintenanceMode();
 
             // Cleanup activity log
@@ -418,11 +418,21 @@ class ServiceProvider extends AppServiceProvider
                     'form' => '~/app/system/models/config/general_settings',
                     'request' => 'System\Requests\GeneralSettings',
                 ],
+                'site' => [
+                    'label' => 'system::lang.settings.text_tab_site',
+                    'description' => 'system::lang.settings.text_tab_desc_site',
+                    'icon' => 'fa fa-globe',
+                    'priority' => 6,
+                    'permission' => ['Site.Settings'],
+                    'url' => admin_url('settings/edit/site'),
+                    'form' => '~/app/system/models/config/site_settings',
+                    'request' => 'System\Requests\SiteSettings',
+                ],
                 'mail' => [
                     'label' => 'lang:system::lang.settings.text_tab_mail',
                     'description' => 'lang:system::lang.settings.text_tab_desc_mail',
                     'icon' => 'fa fa-envelope',
-                    'priority' => 5,
+                    'priority' => 3,
                     'permission' => ['Site.Settings'],
                     'url' => admin_url('settings/edit/mail'),
                     'form' => '~/app/system/models/config/mail_settings',
@@ -432,7 +442,7 @@ class ServiceProvider extends AppServiceProvider
                     'label' => 'lang:system::lang.settings.text_tab_server',
                     'description' => 'lang:system::lang.settings.text_tab_desc_server',
                     'icon' => 'fa fa-cog',
-                    'priority' => 6,
+                    'priority' => 7,
                     'permission' => ['Site.Settings'],
                     'url' => admin_url('settings/edit/advanced'),
                     'form' => '~/app/system/models/config/advanced_settings',

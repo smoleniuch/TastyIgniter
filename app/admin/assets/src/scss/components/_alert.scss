@@ -33,9 +33,23 @@
     margin-bottom: 0;
   }
 }
-.swal-button--confirm {
-  @extend .btn-primary;
+.swal2-styled.swal2-confirm {
+  @each $color, $value in $theme-colors {
+    &.btn-#{$color} {
+      background-color: $value;
+    }
+  }
 }
-.swal-button--cancel {
-  @extend .btn-light;
+.swal2-styled.swal2-cancel {
+  @each $color, $value in $theme-colors {
+    &.btn-#{$color} {
+      background-color: $value;
+    }
+  }
+}
+.swal2-select {
+  @extend .form-select;
+}
+.swal2-select {
+  width: auto !important;
 }

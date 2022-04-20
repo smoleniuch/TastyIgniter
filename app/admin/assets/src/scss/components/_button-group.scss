@@ -36,26 +36,41 @@
   border: $input-border-width solid $input-border-color;
   border-radius: $input-border-radius;
 
-  .btn {
+  > .btn {
     padding-top: calc(#{$input-padding-y-lg} - 5px);
     padding-bottom: calc(#{$input-padding-y-lg} - 5px);
     border-radius: $input-border-radius !important;
     font-size: $input-font-size;
     box-shadow: none;
     border: 1px solid transparent;
+    color: inherit !important;
 
-    &:focus,
-    &.focus {
-      background-color: transparent !important;
+    &:disabled,
+    &.disabled {
+      background-color: transparent;
+    }
+  }
+
+  > .btn-check:focus + .btn,
+  > .btn:focus {
+    box-shadow: none;
+  }
+
+  > .btn-check:checked + .btn,
+  > .btn-check:active + .btn,
+  > .btn:active,
+  > .btn.active {
+    background-color: $gray-200 !important;
+    border-color: $input-border-color !important;
+
+    &:focus {
       box-shadow: none;
-      border: 1px solid transparent;
     }
+  }
 
-    &:active,
-    &.active {
-      background-color: $gray-200 !important;
-      border: 1px solid $input-border-color !important;
-      @include box-shadow($btn-box-shadow);
-    }
+  > .btn-group:not(:first-child) > .btn,
+  > .btn:nth-child(n+3),
+  > :not(.btn-check) + .btn {
+    margin-left: 5px;
   }
 }

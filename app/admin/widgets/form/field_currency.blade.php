@@ -8,7 +8,7 @@
 @else
     <div class="input-group">
         @unless ($symbolAfter)
-            <span class="input-group-text"><b>{{$symbol}}</b></span><
+            <span class="input-group-text"><b>{{$symbol}}</b></span>
         @endunless
         <input
             name="{{ $field->getName() }}"

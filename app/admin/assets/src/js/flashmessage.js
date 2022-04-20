@@ -13,15 +13,17 @@
 
         if ($element.length === 0) {
             $element = $('<div />', {
-                class: 'alert alert-' + options.class
+                class: 'alert alert-'+options.class
             }).html(options.text)
         }
 
         $element.addClass('flash-message animated fadeInDown')
         $element.attr('data-control', null)
 
-        if (options.allowDismiss)
-            $element.prepend('<button type="button" class="close" aria-hidden="true">&times;</button>')
+        if (options.allowDismiss) {
+            $element.addClass('alert-dismissible')
+            $element.append('<button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>')
+        }
 
         $element.on('click', 'button', remove)
         if (options.interval > 0) $element.on('click', remove)
@@ -34,8 +36,8 @@
             $element.addClass('show')
         }, 100)
 
-        if (options.allowDismiss && options.interval > 0)
-            timer = window.setTimeout(remove, options.interval * 1000)
+        // if (options.allowDismiss && options.interval > 0)
+        //     timer = window.setTimeout(remove, options.interval * 1000)
 
         function removeElement() {
             $element.remove()

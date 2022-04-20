@@ -11,35 +11,6 @@
   border: 0;
   padding: $btn-action-padding;
 }
-//@each $color, $value in $theme-colors {
-//  .btn-#{$color} {
-//    &:not([href]) {
-//      color: color-yiq($value);
-//      &:hover {
-//        color: color-yiq(darken($value, 7.5%));
-//      }
-//
-//      &.disabled,
-//      &:disabled {
-//        color: color-yiq($value);
-//      }
-//    }
-//  }
-//  .btn-outline-#{$color} {
-//    &:not([href]) {
-//      color: $value;
-//
-//      &:hover {
-//        color: color-yiq($value);
-//      }
-//
-//      &.disabled,
-//      &:disabled {
-//        color: $value;
-//      }
-//    }
-//  }
-//}
 .btn-light {
   background-color: $light;
   border-color: $gray-300;
@@ -49,13 +20,14 @@
     border-color: $gray-400;
   }
 }
+.btn-secondary, .btn-default {
+  &:hover {
+    color: $white;
+  }
+}
 .btn-light:not(:disabled):not(.disabled):active,
 .btn-light:not(:disabled):not(.disabled).active,
 .show > .btn-light.dropdown-toggle {
   background-color: $gray-400;
   border-color: $gray-400;
-}
-.btn-group > .btn:not(:first-child),
-.btn-group > .btn-group:not(:first-child) {
-  margin-left: 0;
 }

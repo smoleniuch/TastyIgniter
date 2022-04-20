@@ -55,7 +55,7 @@
 .multiselect-container .multiselect-all .form-check,
 .multiselect-container .multiselect-group .form-check,
 .multiselect-container .multiselect-option .form-check {
-  padding: 0 5px 0 0;
+  padding: 0 5px 0 0 !important;
 }
 
 .multiselect-container .multiselect-item > a {

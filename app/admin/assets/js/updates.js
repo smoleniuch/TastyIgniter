@@ -421,7 +421,7 @@
             '<div id="item-modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">',
             '<div class="modal-dialog"><div class="modal-content"><div class="modal-header">',
             '<h4 class="modal-title"></h4>',
-            '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>',
+            '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>',
             '</div><div class="modal-body wrap-none">',
             '<div class="panel panel-light panel-item-modal"><div class="item-details"></div>',
             '<div class="panel-footer border-top">',
@@ -461,7 +461,7 @@
 
         modalFooter: [
             '<div class="text-right">',
-            '<button type="button" class="btn btn-link" data-dismiss="modal" aria-hidden="true">Close</button>',
+            '<button type="button" class="btn btn-link" data-bs-dismiss="modal" aria-hidden="true">Close</button>',
             '&nbsp;&nbsp;&nbsp;&nbsp;',
             '{{#installed}}',
             '<button type="submit" class="btn btn-primary" disabled><i class="fa fa-cloud-download"></i>&nbsp;&nbsp;{{submit}}</button>',

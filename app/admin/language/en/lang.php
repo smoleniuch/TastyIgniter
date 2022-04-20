@@ -944,11 +944,13 @@ return [
     ],
 
     'settings' => [
-        'text_tab_setup' => 'Setup',
+        'text_tab_setup' => 'Sales',
+        'text_tab_tax' => 'Tax',
         'text_tab_user' => 'User',
 
         'text_tab_desc_user' => 'Configure registration email confirmation, default customer group, ...',
-        'text_tab_desc_setup' => 'Configure order, reservation, invoicing and taxation settings',
+        'text_tab_desc_setup' => 'Configure order, reservation and invoicing settings',
+        'text_tab_desc_tax' => 'Configure tax settings',
     ],
 
     'staff_groups' => [

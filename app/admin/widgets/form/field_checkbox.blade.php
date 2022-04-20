@@ -7,10 +7,11 @@
         @php
             $checkboxId = 'checkbox_'.$field->getId().'_'.$loop->iteration;
             if (is_string($option)) $option = [$option];
+            $checkboxLabel = is_lang_key($option[0]) ? lang($option[0]) : $option[0];
         @endphp
         <div
             id="{{ $field->getId() }}"
-            class="form-check custom-control-inline"
+            @class(['form-check form-check-inline' => $checkboxLabel])
         >
             <input
                 type="checkbox"
@@ -22,10 +23,12 @@
                 {!! $this->previewMode ? 'disabled="disabled"' : '' !!}
                 {!! $field->getAttributes() !!}
             />
-            <label
-                class="form-check-label"
-                for="{{ $checkboxId }}"
-            >{{ is_lang_key($option[0]) ? lang($option[0]) : $option[0] }}</label>
+            @if($checkboxLabel)
+                <label
+                    class="form-check-label"
+                    for="{{ $checkboxId }}"
+                >{{ $checkboxLabel }}</label>
+            @endif
         </div>
     @empty
 
@@ -35,7 +38,10 @@
             value="0"
             {!! $this->previewMode ? 'disabled="disabled"' : '' !!}>
 
-        <div class="form-check" tabindex="0">
+        <div
+            @class(['form-check form-check-inline' => $field->placeholder])
+            class="form-check"
+        >
             <input
                 type="checkbox"
                 class="form-check-input"
@@ -46,9 +52,9 @@
                 {!! $field->value == 1 ? 'checked="checked"' : '' !!}
                 {!! $field->getAttributes() !!}
             />
-            <label class="form-check-label" for="{{ $field->getId() }}">
-                @if ($field->placeholder) @lang($field->placeholder) @else &nbsp; @endif
-            </label>
+            @if($field->placeholder)
+                <label class="form-check-label" for="{{ $field->getId() }}">@lang($field->placeholder)</label>
+            @endif
         </div>
     @endforelse
 </div>

@@ -3,7 +3,7 @@
     <div class="modal-content">
         <div class="modal-header">
             <h4 class="modal-title">{{ sprintf(lang('admin::lang.list.setup_title'), lang($this->getConfig('title')))}}</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
         </div>
         <div class="modal-body">
             <div class="form-group">
@@ -28,7 +28,7 @@
                                 <div class="btn btn-handle form-check-handle mr-2">
                                     <i class="fa fa-arrows-alt-v text-muted"></i>
                                 </div>
-                                <div class="form-check custom-control-inline">
+                                <div class="form-check form-check-inline">
                                     <input
                                         type="checkbox"
                                         id="list-setup-{{ $column->columnName }}"
@@ -87,7 +87,7 @@
             <button
                 type="button"
                 class="btn btn-link"
-                data-dismiss="modal"
+                data-bs-dismiss="modal"
             >@lang('admin::lang.list.button_cancel_setup')</button>
             <button
                 type="button"

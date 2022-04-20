@@ -1,21 +1,16 @@
 .input-group {
   > .form-control,
-  > .custom-select {
+  > .form-select {
     &:not(:last-child) { @include border-end-radius($input-border-radius); }
 
     &:not(:first-child) { @include border-start-radius($input-border-radius); }
   }
-}
-.input-group-prepend,
-.input-group-append {
+
   .btn {
     border-radius: $input-border-radius !important;
   }
 
-  .btn + .btn,
-  .btn + .input-group-text,
-  .input-group-text + .input-group-text,
-  .input-group-text + .btn {
-    margin-left: $input-spacer;
+  > .btn {
+    margin-left: $input-spacer !important;
   }
 }

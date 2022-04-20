@@ -33,8 +33,8 @@
             maintainAspectRatio: false,
             scales: {
                 y: {
+                    beginAtZero: true,
                     ticks: {
-                        beginAtZero: true,
                         callback: function (value) {
                             if (value % 1 === 0) {
                                 return value;

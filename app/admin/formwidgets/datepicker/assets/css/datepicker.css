@@ -80,7 +80,6 @@
 .datepicker table tr td span.active:hover:active:focus,
 .datepicker table tr td span.active:hover:active:hover {
   background-color: var(--bs-primary);
-  border-color: var(--bs-primary);
 }
 
 .bootstrap-datetimepicker-widget table td {
@@ -88,7 +87,12 @@
 }
 .bootstrap-datetimepicker-widget table th,
 .bootstrap-datetimepicker-widget table td.day {
-	height: 30px;
-	line-height: 30px;
-	width: 30px;
+  height: 30px;
+  line-height: 30px;
+  width: 30px;
+}
+
+.bootstrap-datetimepicker-widget table td span:hover {
+  background-color: var(--bs-primary);
+  color: var(--bs-white);
 }

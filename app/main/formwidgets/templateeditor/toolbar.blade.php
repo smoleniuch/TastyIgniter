@@ -3,7 +3,7 @@
         <select
             id="{{ $field->getId('type') }}"
             name="{{ $field->getName() }}[type]"
-            class="form-control"
+            class="form-select"
             data-template-control="choose-type"
             data-request="{{ $this->getEventHandler('onChooseFile') }}"
             data-progress-indicator="@lang('admin::lang.text_loading')"
@@ -23,7 +23,7 @@
             <select
                 id="{{ $field->getId('file') }}"
                 name="{{ $field->getName() }}[file]"
-                class="form-control"
+                class="form-select"
                 data-template-control="choose-file"
                 data-request="{{ $this->getEventHandler('onChooseFile') }}"
                 data-progress-indicator="@lang('admin::lang.text_loading')"

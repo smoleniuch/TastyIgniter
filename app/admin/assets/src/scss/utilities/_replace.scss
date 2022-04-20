@@ -120,10 +120,14 @@
   @extend .rounded-pill;
 }
 .form-group {
-  @extend .mb-3;
+  margin-bottom: $spacer;
 }
 .form-row {
   @extend .row;
+}
+.btn-block {
+  display: block;
+  width: 100%;
 }
 .border-right {
   @extend .border-end;
