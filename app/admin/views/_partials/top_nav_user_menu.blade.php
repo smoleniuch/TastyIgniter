@@ -18,36 +18,6 @@
                 <div class="text-muted">{{ $userPanel->getRoleName() }}</div>
             </div>
         </div>
-        <div class="px-3 pb-3">
-            <form method="POST" accept-charset="UTF-8">
-                <div class="input-group">
-                    <div class="input-group-text{{ $userPanel->hasActiveLocation() ? ' text-info' : ' text-muted' }}">
-                        <i class="fa fa-map-marker fa-fw"></i>
-                    </div>
-                    @if(count($userPanel->listLocations()) <= 1)
-                        <input
-                            type="text"
-                            class="form-control-static"
-                            value="{{ $userPanel->getLocationName() }}"
-                        />
-                    @else
-                        <select
-                            name="location"
-                            class="form-select"
-                            data-request="{{ $this->getEventHandler('onChooseLocation') }}"
-                        >
-                            <option value="0">@lang('admin::lang.text_all_locations')</option>
-                            @foreach($userPanel->listLocations() as $location)
-                                <option
-                                    value="{{ $location->id }}"
-                                    {{ $location->active ? 'selected="selected"' : '' }}
-                                >{{ $location->name }}</option>
-                            @endforeach
-                        </select>
-                    @endif
-                </div>
-            </form>
-        </div>
         <div role="separator" class="dropdown-divider"></div>
         @foreach ($item->options() as $item)
             <a class="dropdown-item {{ $item->cssClass }}" {!! Html::attributes($item->attributes) !!}>

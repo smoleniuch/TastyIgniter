@@ -43,6 +43,9 @@ mix.scripts(
     'js/admin.js'
 )
 
+// We only want to copy these files when building for production
+if (process.env.NODE_ENV !== 'productiion') return
+
 //
 // Copy fonts from node_modules
 //
@@ -50,7 +53,7 @@ mix.copyDirectory(
     'node_modules/@fortawesome/fontawesome-free/webfonts',
     '../../admin/assets/fonts/FontAwesome'
 ).copy(
-    'node_modules/animate.css/animate.min.css',
+    'node_modules/animate.css/animate.compat.css',
     '../../admin/assets/src/scss/vendor/_animate.scss'
 );
 

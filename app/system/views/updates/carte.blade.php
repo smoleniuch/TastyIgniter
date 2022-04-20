@@ -1,4 +1,4 @@
-<div id="carte-modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+<div id="carte-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -27,17 +27,15 @@
                                 placeholder="Enter your carte key..."
                                 autocomplete="off"
                             />
-                            <div class="input-group-btn">
-                                <a
-                                    class="btn btn-outline-default btn-carte-help"
-                                    onclick="$('#carte-help').slideToggle()"
-                                ><i class="fa fa-question-circle"></i></a>
-                                <button
-                                    id="update-carte"
-                                    class="btn btn-primary"
-                                    type="button"
-                                ><i class="fa fa-arrow-right"></i></button>
-                            </div>
+                            <a
+                                class="btn btn-outline-default btn-carte-help"
+                                onclick="$('#carte-help').slideToggle()"
+                            ><i class="fa fa-question-circle"></i></a>
+                            <button
+                                id="update-carte"
+                                class="btn btn-primary"
+                                type="button"
+                            ><i class="fa fa-arrow-right"></i></button>
                         </div>
                         {!! form_close() !!}
                         <div

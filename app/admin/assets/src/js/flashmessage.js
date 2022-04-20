@@ -36,8 +36,8 @@
             $element.addClass('show')
         }, 100)
 
-        // if (options.allowDismiss && options.interval > 0)
-        //     timer = window.setTimeout(remove, options.interval * 1000)
+        if (options.allowDismiss && options.interval > 0)
+            timer = window.setTimeout(remove, options.interval * 1000)
 
         function removeElement() {
             $element.remove()
@@ -47,11 +47,9 @@
             window.clearInterval(timer)
 
             $element.addClass('fadeOutUp')
-            $.support.transition && $element.hasClass('fadeOutUp')
-                ? $element
-                    .one($.support.transition.end, removeElement)
-                    .emulateTransitionEnd(500)
-                : removeElement()
+            $element.on('animationend', () => {
+                removeElement()
+            });
         }
     }
 

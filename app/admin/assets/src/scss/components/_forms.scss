@@ -25,7 +25,7 @@
 }
 
 //
-.control-label {
+.control-label, .form-label {
   color: $gray-800;
 }
 
@@ -201,9 +201,6 @@
   height: add($input-height-inner, 0.25rem);
 }
 // Control label
-.control-label {
-  color: $gray-800;
-}
 .help-block {
   @extend .form-text;
   color: $gray-600;

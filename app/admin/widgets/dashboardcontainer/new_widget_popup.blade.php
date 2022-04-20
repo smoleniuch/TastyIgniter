@@ -5,7 +5,7 @@
 </div>
 <div class="modal-body">
     <div class="form-group">
-        <label class="control-label">@lang('admin::lang.dashboard.label_widget')</label>
+        <label class="form-label">@lang('admin::lang.dashboard.label_widget')</label>
         <select class="form-select" name="className">
             <option value="">@lang('admin::lang.dashboard.text_select_widget')</option>
             @foreach ($widgets as $className => $widgetInfo)
@@ -17,7 +17,7 @@
     </div>
 
     <div class="form-group">
-        <label class="control-label">@lang('admin::lang.dashboard.label_widget_columns')</label>
+        <label class="form-label">@lang('admin::lang.dashboard.label_widget_columns')</label>
         <select class="form-select" name="size">
             <option></option>
             @foreach ($gridColumns as $column => $name)

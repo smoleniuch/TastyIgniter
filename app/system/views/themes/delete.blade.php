@@ -31,7 +31,7 @@
         <div class="form-group span-full">
             <label
                 for="input-delete-data"
-                class="control-label"
+                class="form-label"
             >@lang('system::lang.themes.label_delete_data')</label>
             <br>
             <div id="input-delete-data">

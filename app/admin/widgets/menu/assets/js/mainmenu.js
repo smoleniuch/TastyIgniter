@@ -19,12 +19,6 @@
             throw new Error('Main menu option "alias" is not set.')
 
         this.$el.on('show.bs.dropdown', '.dropdown', $.proxy(this.onDropdownShow, this))
-
-        this.$el.on('click', '.dropdown-menu', function (event) {
-            var $el = $(event.target)
-            if ($el.data('toggle') !== 'modal')
-                event.stopPropagation();
-        });
     }
 
     MainMenu.prototype.requestOptions = function ($itemMenu) {

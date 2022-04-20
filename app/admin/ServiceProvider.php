@@ -266,6 +266,7 @@ class ServiceProvider extends AppServiceProvider
                         'class' => 'nav-link',
                         'href' => '',
                         'data-bs-toggle' => 'dropdown',
+                        'data-bs-auto-close' => 'outside',
                     ],
                 ],
                 'settings' => [
@@ -274,6 +275,11 @@ class ServiceProvider extends AppServiceProvider
                     'badgeCount' => ['System\Models\Settings_model', 'updatesCount'],
                     'options' => ['System\Models\Settings_model', 'listMenuSettingItems'],
                     'permission' => 'Site.Settings',
+                ],
+                'locations' => [
+                    'type' => 'partial',
+                    'options' => ['Admin\Models\Locations_model', 'getDropdownOptions'],
+                    'path' => '~/app/admin/views/locations/picker',
                 ],
                 'user' => [
                     'type' => 'partial',
@@ -314,7 +320,7 @@ class ServiceProvider extends AppServiceProvider
                 'restaurant' => [
                     'priority' => 10,
                     'class' => 'restaurant',
-                    'icon' => 'fa-location-dot',
+                    'icon' => 'fa-gem',
                     'title' => lang('admin::lang.side_menu.restaurant'),
                     'child' => [
                         'locations' => [

@@ -7,7 +7,7 @@
         </div>
         <div class="modal-body">
             <div class="form-group">
-                <label class="control-label">
+                <label class="form-label">
                     @lang('admin::lang.list.label_visible_columns')
                     <span class="help-block">@lang('admin::lang.list.help_visible_columns')</span>
                 </label>
@@ -54,7 +54,7 @@
             </div>
             @if ($this->showPagination)
                 <div class="form-group">
-                    <label class="control-label">
+                    <label class="form-label">
                         @lang('admin::lang.list.label_page_limit')
                         <span class="help-block">@lang('admin::lang.list.help_page_limit')</span>
                     </label>

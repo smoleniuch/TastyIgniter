@@ -69,11 +69,4 @@ class Updates extends \Admin\Classes\AdminController
             flash()->warning($ex->getMessage())->now();
         }
     }
-
-    protected function prepareAssets()
-    {
-        $this->addJs('ui/js/vendor/mustache.js', 'mustache-js');
-        $this->addJs('ui/js/vendor/typeahead.js', 'typeahead-js');
-        $this->addJs('ui/js/updates.js', 'updates-js');
-    }
 }
